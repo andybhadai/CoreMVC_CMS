@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title><!-- ViewData checks for null, where ViewBag is dynamic and can change its type -->
+    <link href="~/css/normalize.css" rel="stylesheet" />
+    <link href="~/css/skeleton.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="/Blog/">
+                        The blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/Products/">
+                        The products
+                    </a>
+                </li>
+                <li>
+                    <a href="/Other/">
+                        Other pages
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav> <br class="break"/>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/js/main.js"></script>
+</body>
+</html>

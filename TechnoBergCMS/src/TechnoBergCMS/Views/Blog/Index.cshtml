@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{ 
+    ViewData["Title"] = "Blog | Index";
+}
+
+<title>Welcome to the blog</title>
+<h1>Blog articles</h1>
+All the blogs are listed below <br />
+@ViewData["data"];
+
+<form asp-action="Create" asp-controller="Blog" method="POST">
+    <div class="row">
+        <div class="three columns">
+            
+        </div>
+    </div>
+</form>
+

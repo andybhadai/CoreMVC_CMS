@@ -1,35 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
 
-namespace CMS.Controllers
+namespace MvcMovie.Controllers
 {
-    public class HomeController : Controller
+    public class HelloWorldController : Controller
     {
+        // 
+        // GET: /HelloWorld/
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        // 
+        // GET: /HelloWorld/Welcome/ 
+
+        public string Welcome(string name = "Andy", int id = 0)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
+            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {id}");
         }
     }
 }

@@ -1,0 +1,43 @@
+﻿body{
+    background:#F2F2F2;
+}
+
+nav > div > ul{
+    list-style-type: none;
+}
+
+nav > div > ul > li{
+    float:left;
+}
+
+nav > div > ul > li > a{
+    display:block;
+    height:50px;
+    width:25vw;
+    text-align:center;
+    color:#FFFFFF;
+    text-decoration: none;
+    padding:5px;
+    line-height:55px;
+}
+
+nav > div > ul > li > a:hover{
+    background:#808080;
+    color:#FFFFFF;
+}
+
+.break{
+    clear:both;
+}
+
+.menu{
+    width:100%;
+    background:#000000;
+    height:60px;
+    position:fixed;
+    top:0px;
+}
+
+.container{
+    margin-top:60px;
+}
