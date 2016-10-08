@@ -1,4 +1,4 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@model IEnumerable<Blog>
 
 @{ 
     ViewData["Title"] = "Blog | Index";
@@ -7,13 +7,19 @@
 <title>Welcome to the blog</title>
 <h1>Blog articles</h1>
 All the blogs are listed below <br />
-@ViewData["data"];
+@ViewData["data"]
 
-<form asp-action="Create" asp-controller="Blog" method="POST">
-    <div class="row">
-        <div class="three columns">
-            
-        </div>
-    </div>
-</form>
+<div asp-validation-summary="All"></div>
+
+<div class="box_content">
+    @foreach (var blog in Model)
+    {
+        // Display the blog titles with the author
+        <ul class="blog_list">
+            <li><a href="">@blog.Title</a></li>
+        </ul>
+    }
+</div> <br />
+
+<a class="button button-primary" href="blog/create/">Create new entry</a>
 

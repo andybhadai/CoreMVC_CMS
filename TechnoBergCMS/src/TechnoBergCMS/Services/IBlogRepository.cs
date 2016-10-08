@@ -8,6 +8,7 @@ namespace TechnoBergCMS.Services
 {
     public interface IBlogRepository
     {
-        IEnumerable<Blog> GetAllBLogs();
+        IEnumerable<Blog> GetAllBlogs();
+        void AddBlog(Blog blog);
     }
 }
