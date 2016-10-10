@@ -41,6 +41,7 @@ namespace TechnoBergCMS
             //services.AddSingleton<IBlogRepository, InMemoryBlogRepository>();
 
             services.AddScoped<IBlogRepository, DatabaseBlogRepository>();
+            services.AddScoped<IProductRepository, DatabaseProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +69,7 @@ namespace TechnoBergCMS
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}"
+                    template: "{controller=Blog}/{action=Index}/{id?}"
                 );
 
                 routes.MapRoute(

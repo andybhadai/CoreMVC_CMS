@@ -1,0 +1,44 @@
+﻿@model Product
+
+@{ 
+    ViewData["Title"] = "Product | Create";
+}
+
+<h1>Create a new product!</h1>
+
+<form asp-action="Create" asp-controller="Product" method="POST">
+    <div asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="twelve columns">
+            <label asp-for="SKU"></label>
+            <input asp-for="SKU" class="u-full-width" type="text" placeholder="A unique number for you product">
+            <span asp-validation-for="SKU"></span>
+        </div>
+    </div>
+    <div class="twelve columns">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="u-full-width" type="text" placeholder="The name for your product">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="twelve columns">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="u-full-width" type="number" placeholder="The price for the product">
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div class="twelve columns">
+        <label asp-for="Length"></label>
+        <input asp-for="Length" class="u-full-width" type="number" placeholder="The length-dimension">
+        <span asp-validation-for="Length"></span>
+    </div>
+    <div class="twelve columns">
+        <label asp-for="Width"></label>
+        <input asp-for="Width" class="u-full-width" type="number" placeholder="The width-dimension">
+        <span asp-validation-for="Width"></span>
+    </div>
+    <div class="twelve columns">
+        <label asp-for="Heigth"></label>
+        <input asp-for="Heigth" class="u-full-width" type="number" placeholder="The height-dimension">
+        <span asp-validation-for="Heigth"></span> <br />
+    </div>
+    <input type="submit" class="button-primary" value="Create">
+</form>

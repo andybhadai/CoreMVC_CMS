@@ -11,13 +11,12 @@ namespace TechnoBergCMS.Data
     {
         public ApplicationDbContext()
         {
-
         }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
 
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

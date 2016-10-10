@@ -36,6 +36,7 @@ nav > div > ul > li > a:hover{
     height:60px;
     position:fixed;
     top:0px;
+    z-index:1;
 }
 
 .container{

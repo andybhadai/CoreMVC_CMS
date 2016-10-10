@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Product>
+
+@{ 
+    ViewData["Title"] = "Product | Index";
+}
+
+<title>Product details</title>
+<h1>Products</h1>
+@ViewData["data"]
+
+<div asp-validation-summary="All"></div>
+
+<div class="box_content">
+    @foreach (var product in Model)
+    {
+        // Display the blog titles with the author
+        <ul class="blog_list">
+            <li><a href="/Product/View/@product.Id/">@product.Name - @product.SKU</a></li>
+        </ul>
+    }
+</div> <br />
+
+<a class="button button-primary" href="/product/create/">Create new entry</a>
+

@@ -22,9 +22,29 @@ namespace TechnoBergCMS.Services
             this.Blogs.Add(blog);
         }
 
+        public Blog Find(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Blog> GetAllBlogs()
         {
             return this.Blogs;
+        }
+
+        public Blog Update(Blog blog)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IBlogRepository.Update(Blog blog)
+        {
+            throw new NotImplementedException();
         }
     }
 }

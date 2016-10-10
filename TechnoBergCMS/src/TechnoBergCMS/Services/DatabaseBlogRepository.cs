@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Caching.Memory;
 using TechnoBergCMS.Data;
 using TechnoBergCMS.Models;
 
@@ -22,9 +23,22 @@ namespace TechnoBergCMS.Services
             this.DbContext.SaveChanges();
         }
 
+        public Blog Find(int id)
+        {
+            Blog blog;
+            blog = this.DbContext.Blogs.SingleOrDefault(b => b.Id == id);
+            return blog;
+        }
+
         public IEnumerable<Blog> GetAllBlogs()
         {
             return this.DbContext.Blogs;
+        }
+
+        public void Update(Blog blog)
+        {
+            this.DbContext.Update(blog);
+            this.DbContext.SaveChanges();
         }
     }
 }

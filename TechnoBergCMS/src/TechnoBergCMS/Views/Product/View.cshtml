@@ -1,0 +1,15 @@
+﻿@model Product
+
+@{ 
+    ViewData["Title"] = $"Product | View product {@Model.Name} - {@Model.SKU}";
+}
+
+<div class="box_content">
+    <h1>@Model.Name</h1>
+    Specifications for @Model.Name - @Model.SKU
+    Name: @Model.SKU <br />
+    Price: @Model.Price <br />
+    Dimensions (length x width x height): @Model.Length x @Model.Width x @Model.Heigth <br />
+    SKU: @Model.SKU
+    <a href="/Product/Edit/@Model.Id">Edit '@Model.Name'</a>
+</div> <br />

@@ -1,0 +1,11 @@
+﻿@model Blog
+
+@{ 
+    ViewData["Title"] = "Blog | View";
+}
+
+<div class="box_content">
+    <h1>@Model.Title</h1>
+    @Model.Text <br />
+    <a href="/Blog/Edit/@Model.Id">Edit '@Model.Title'</a>
+</div> <br />

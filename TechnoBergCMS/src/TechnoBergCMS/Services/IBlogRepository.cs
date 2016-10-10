@@ -10,5 +10,7 @@ namespace TechnoBergCMS.Services
     {
         IEnumerable<Blog> GetAllBlogs();
         void AddBlog(Blog blog);
+        Blog Find(int id);
+        void Update(Blog blog);
     }
 }

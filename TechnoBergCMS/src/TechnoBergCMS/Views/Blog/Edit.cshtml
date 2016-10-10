@@ -1,0 +1,24 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Blog | Edit";
+}
+
+<h1>Create your blog below.</h1>
+
+<form asp-action="Update" asp-controller="Blog" method="PUT">
+    <div asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="twelve columns">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="u-full-width" type="text" value="@Model.Title">
+            <span asp-validation-for="Title"></span>
+        </div>
+    </div>
+    <div class="twelve columns">
+        <label asp-for="Text"></label>
+        <textarea asp-for="Text" class="u-full-width">@Model.Text</textarea>
+        <span asp-validation-for="Text"></span>
+    </div>
+    <input type="submit" class="button-primary" value="Update">
+</form>

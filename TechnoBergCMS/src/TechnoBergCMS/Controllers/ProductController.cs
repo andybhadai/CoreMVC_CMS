@@ -10,19 +10,18 @@ using TechnoBergCMS.Models;
 
 namespace TechnoBergCMS.Controllers
 {
-    public class BlogController : Controller
+    public class ProductController : Controller
     {
-        // No operations on this list
-        private readonly IBlogRepository BlogRepository;
+        private readonly IProductRepository ProductRepository;
 
-        public BlogController(IBlogRepository blogRepository)
+        public ProductController(IProductRepository productRepository)
         {
-            this.BlogRepository = blogRepository;
+            this.ProductRepository = productRepository;
         }
 
         public IActionResult Index()
         {
-            var model = this.BlogRepository.GetAllBlogs();
+            var model = this.ProductRepository.GetAllProducts();
             return View(model);
         }
 
@@ -32,12 +31,12 @@ namespace TechnoBergCMS.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Blog blog)
+        public IActionResult Create(Product product)
         {
             // Check if the Blog-oject is valid (it uses the DataAnnotations in the Blog to validate the model)
             if (ModelState.IsValid)
             {
-                this.BlogRepository.AddBlog(blog);
+                this.ProductRepository.AddProduct(product);
                 return RedirectToAction("Index");
             }
 
@@ -46,27 +45,27 @@ namespace TechnoBergCMS.Controllers
 
         public IActionResult View(int id)
         {
-            var blog = this.BlogRepository.Find(id);
-            return View(blog);
+            var product = this.ProductRepository.Find(id);
+            return View(product);
         }
 
         public IActionResult Edit(int id)
         {
-            var blog = this.BlogRepository.Find(id);
-            return View(blog);
+            var product = this.ProductRepository.Find(id);
+            return View(product);
         }
 
         [HttpPost]
-        public IActionResult Update(Blog blog)
+        public IActionResult Update(Product product)
         {
             // Check if the Blog-oject is valid (it uses the DataAnnotations in the Blog to validate the model)
             if (ModelState.IsValid)
             {
-                this.BlogRepository.Update(blog);
+                this.ProductRepository.Update(product);
                 return RedirectToAction("Index");
             }
 
-            return View(blog);
+            return View(product);
         }
     }
 }
